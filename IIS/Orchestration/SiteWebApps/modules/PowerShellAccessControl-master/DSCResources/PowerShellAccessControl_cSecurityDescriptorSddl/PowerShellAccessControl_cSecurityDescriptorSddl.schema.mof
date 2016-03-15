@@ -1,0 +1,10 @@
+
+[ClassVersion("1.0.0.0"), FriendlyName("cSecurityDescriptorSddl")]
+class PowerShellAccessControl_cSecurityDescriptorSddl : OMI_BaseResource
+{
+	[Key] String Path;
+	[Key, ValueMap{"File","Directory","RegistryKey","Service","WmiNamespace"}, Values{"File","Directory","RegistryKey","Service","WmiNamespace"}] String ObjectType;
+	[Write] String Sddl;
+};
+
+

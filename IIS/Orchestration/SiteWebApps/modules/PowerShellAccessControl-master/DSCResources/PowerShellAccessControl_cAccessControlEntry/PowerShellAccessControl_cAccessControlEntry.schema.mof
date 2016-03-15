@@ -1,0 +1,18 @@
+
+[ClassVersion("1.0.0.0"), FriendlyName("cAccessControlEntry")]
+class PowerShellAccessControl_cAccessControlEntry : OMI_BaseResource
+{
+	[Key] String Path;
+	[Key, ValueMap{"File","Directory","RegistryKey","Service","WmiNamespace"}, Values{"File","Directory","RegistryKey","Service","WmiNamespace"}] String ObjectType;
+	[Write, ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
+	[Key, ValueMap{"AccessAllowed","AccessDenied","SystemAudit"}, Values{"AccessAllowed","AccessDenied","SystemAudit"}] String AceType;
+	[Write] Boolean AuditSuccess;
+	[Write] Boolean AuditFailure;
+	[Key] String Principal;
+	[Write] UInt32 AccessMask;
+	[Write] String AppliesTo;
+	[Write] Boolean OnlyApplyToThisContainer;
+	[Write] Boolean Specific;
+};
+
+

@@ -1,0 +1,15 @@
+
+[ClassVersion("1.0.0.0"), FriendlyName("cSecurityDescriptor")]
+class PowerShellAccessControl_cSecurityDescriptor : OMI_BaseResource
+{
+	[Key] String Path;
+	[Key, ValueMap{"File","Directory","RegistryKey","Service","WmiNamespace"}, Values{"File","Directory","RegistryKey","Service","WmiNamespace"}] String ObjectType;
+	[Write] String Owner;
+	[Write] String Group;
+	[Write] String Access;
+	[Write, ValueMap{"Enabled","Disabled"}, Values{"Enabled","Disabled"}] String AccessInheritance;
+	[Write] String Audit;
+	[Write, ValueMap{"Enabled","Disabled"}, Values{"Enabled","Disabled"}] String AuditInheritance;
+};
+
+
